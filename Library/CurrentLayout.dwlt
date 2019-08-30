@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 2752
     height: 1069
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -113,10 +113,10 @@ MonoBehaviour:
     y: 30
     width: 2752
     height: 1019
-  m_MinSize: {x: 917, y: 348}
-  m_MaxSize: {x: 22012, y: 10024}
+  m_MinSize: {x: 913, y: 348}
+  m_MaxSize: {x: 22008, y: 10024}
   vertical: 0
-  controlID: 57
+  controlID: 58
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 348}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 58
+  controlID: 13
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,8 +215,8 @@ MonoBehaviour:
     y: 0
     width: 205
     height: 1019
-  m_MinSize: {x: 204, y: 224}
-  m_MaxSize: {x: 4004, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -377,7 +377,7 @@ MonoBehaviour:
     x: 0
     y: 73.6
     width: 1353
-    height: 418
+    height: 386
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 5e2be0b0efd8ca64ebb25432baf6bbdb
   m_SceneLighting: 1
@@ -385,9 +385,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 493.40125, y: 228.34988, z: -0.5790405}
+    m_Target: {x: 512, y: 288, z: 0}
     speed: 2
-    m_Value: {x: 493.40125, y: 228.34988, z: -0.5790405}
+    m_Value: {x: 512, y: 288, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -417,11 +417,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.1021307, y: 0.0050700195, z: -0.0005210027, w: -0.99475795}
     speed: 2
-    m_Value: {x: -0.102130696, y: 0.005070019, z: -0.0005210027, w: -0.99475795}
+    m_Value: {x: -0.1021307, y: 0.0050700195, z: -0.0005210027, w: -0.99475795}
   m_Size:
-    m_Target: 669.2533
+    m_Target: 771.0665
     speed: 2
-    m_Value: 669.2533
+    m_Value: 771.0665
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -552,9 +552,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 9c060000
       m_LastClickedID: 0
-      m_ExpandedIDs: d4fbffff
+      m_ExpandedIDs: f4c3ffff96d6fffff0dbffffd6dfffff12e1ffff30e2ffff0ae3ffff3ce3ffff6ce3ffff56e4ffffbae5ffff18e6ffffe8e9ffff12ebffff36ebffffaef0ffff60f2ffffd0f2ffffe2f3ffff74f4ffff66f8ffff90f8ffffa6f8ffffd4fbffffd20b0000f60b0000ae2a0000d22a0000202b0000b02b0000fe2b00006a2c0000323100009e310000143600004a37000082380000b4380000d8380000823d0000c83e0000ec3e0000c04e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -616,19 +616,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script
+    - Assets/StateMachine/SMState
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Script
+  - Assets/StateMachine/SMState
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\berto\OneDrive\Documenti\TestReverseCommit\CrashBand
+  m_LastProjectPath: C:\Users\berto\OneDrive\Documenti\CrashBand
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b4090000
-    m_LastClickedID: 2484
+    m_SelectedIDs: 900a0000
+    m_LastClickedID: 2704
     m_ExpandedIDs: 000000006c090000c80a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 0e3c0000caf5080086060200e211000072460000000000006a7605006c76050068760500e05c0200e45c0200e85c0200e25c0200ea5c02009c1a0000ca1100001c400000283500002a410000589400008a5c0000529d0100000d02009e4200007a3d00006aab01004212000090b0030096b003008ab0030076b1000070b1000082b100007cb10000c21600008c1a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

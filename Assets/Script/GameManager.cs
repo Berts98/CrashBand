@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Animator))]
 public class GameManager : MonoBehaviour
@@ -9,10 +11,18 @@ public class GameManager : MonoBehaviour
     public FlowSM StateMachine;
     public MySceneManager Scenemg;
 
+    #region Actions
+    public Action OnClick;
+    #endregion
+
+    private void Awake()
+    {
+        SingletonFunction();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        SingletonFunction();
         SetUp();
     }
 
@@ -21,6 +31,16 @@ public class GameManager : MonoBehaviour
     {
         
     }
+    private void OnEnable()
+    {
+        OnClick += OnClickTest; 
+    }
+
+    private void OnDisable()
+    {
+        OnClick -= OnClickTest;
+    }
+
 
     public void SingletonFunction()
     {
@@ -38,7 +58,24 @@ public class GameManager : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+    }
 
+    private void OnClickTest()
+    {
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            switch (EventSystem.current.currentSelectedGameObject.name)
+            {
+                case "BackToMenu":
+                    Scenemg.Menu();
+                    break;
+                case "PlayButton":
+                    Scenemg.LevelSelection();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void SetUp()

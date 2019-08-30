@@ -10,6 +10,12 @@ public class MySceneManager : MonoBehaviour
     {
     }
 
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+        GameManager.singleton.StateMachine.SMController.SetTrigger("GoToMenu");
+    }
+
     public void LevelSelection()
     {
         SceneManager.LoadScene(1);
