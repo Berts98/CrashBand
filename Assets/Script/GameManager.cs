@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public static GameManager singleton;
     public FlowSM StateMachine;
     public MySceneManager Scenemg;
+    public UIManager UI;
 
     #region Actions
     public Action OnClick;
+    public Action PauseOn;
+    public Action PauseOff;
     #endregion
 
     private void Awake()
@@ -33,7 +36,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        OnClick += OnClickTest; 
+        OnClick += OnClickTest;
     }
 
     private void OnDisable()
@@ -72,6 +75,9 @@ public class GameManager : MonoBehaviour
                 case "PlayButton":
                     Scenemg.LevelSelection();
                     break;
+                case "Level1":
+                    Scenemg.Level1();
+                    break;
                 default:
                     break;
             }
@@ -82,5 +88,6 @@ public class GameManager : MonoBehaviour
     {
         StateMachine = FindObjectOfType<FlowSM>();
         Scenemg = FindObjectOfType<MySceneManager>();
+        UI = FindObjectOfType<UIManager>();
     }
 }

@@ -5,27 +5,25 @@ using UnityEngine.UI;
 
 public class PauseState : StateMachineBehaviour
 {
-    public Canvas PausePanel;
+    public UIManager UIPause;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PausePanel.enabled = true;
+        UIPause = GameManager.singleton.UI;
+        UIPause.ActivatePausePanel();    
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GameManager.singleton.StateMachine.SMController.SetTrigger("GoToLevel");
-        }
+      
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PausePanel.enabled = false;
+        UIPause.DisactivatePausePanel();
     }
     
 }
