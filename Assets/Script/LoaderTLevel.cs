@@ -21,7 +21,7 @@ public class LoaderTLevel : MonoBehaviour
     
     public void SetUpTLvel()
     {
-        PausePanel = GameManager.singleton.UI.PausePanel;
-        InGamePanel = GameManager.singleton.UI.InGamePanel;
+        GameManager.singleton.UI.InGamePanel = InGamePanel;
+        GameManager.singleton.UI.PausePanel = PausePanel;
     }
 }

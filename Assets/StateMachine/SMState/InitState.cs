@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InitState : StateMachineBehaviour
 {
@@ -10,9 +11,9 @@ public class InitState : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        SceneManager.sceneLoaded += Test;
         SM = GameManager.singleton.StateMachine;
-        Loader = FindObjectOfType<LoaderTLevel>();
-        Loader.SetUpTLvel();
+       
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -25,5 +26,12 @@ public class InitState : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+    }
+
+    private void Test(Scene _scene, LoadSceneMode _loadSceneMode)
+    {
+        Loader = FindObjectOfType<LoaderTLevel>();
+        Loader.SetUpTLvel();
+        SceneManager.sceneLoaded -= Test;
     }
 }

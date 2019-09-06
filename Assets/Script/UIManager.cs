@@ -10,8 +10,7 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.singleton.PauseOn += ActivatePausePanel;
-        GameManager.singleton.PauseOff += DisactivatePausePanel;
+
     }
     private void OnDisable()
     {
@@ -22,7 +21,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.singleton.PauseOn += ActivatePausePanel;
+        GameManager.singleton.PauseOff += DisactivatePausePanel;
     }
 
     // Update is called once per frame
