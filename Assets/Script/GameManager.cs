@@ -78,6 +78,12 @@ public class GameManager : MonoBehaviour
                 case "Level1":
                     Scenemg.Level1();
                     break;
+                case "BackToSelection":
+                    Scenemg.LevelSelection();
+                    break;
+                case "RetryLevel":
+                    Scenemg.Level1();
+                    break;
                 default:
                     break;
             }
