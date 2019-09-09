@@ -28,6 +28,12 @@ public class MySceneManager : MonoBehaviour
         GameManager.singleton.StateMachine.SMController.SetTrigger("GoToInit");
     }
 
+    public void Level2()
+    {
+        SceneManager.LoadScene(3);
+        GameManager.singleton.StateMachine.SMController.SetTrigger("GoToInit");
+    }
+
     public void Quit()
     {
         Application.Quit();
