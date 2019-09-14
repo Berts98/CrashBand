@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public Action OnClick;
     public Action PauseOn;
     public Action PauseOff;
+    public Action Panl1;
+    public Action Panl2;
     #endregion
 
     private void Awake()
@@ -78,11 +80,20 @@ public class GameManager : MonoBehaviour
                 case "Level1":
                     Scenemg.Level1();
                     break;
+                case "Level2":
+                    Scenemg.Level2();
+                    break;
                 case "BackToSelection":
                     Scenemg.LevelSelection();
                     break;
                 case "RetryLevel":
                     Scenemg.Level1();
+                    break;
+                case "Next":
+                    UI.ChangeLevelSelection1();
+                    break;
+                case "Previous":
+                    UI.ChangeLevelSelection2();
                     break;
                 default:
                     break;

@@ -6,6 +6,8 @@ public class LoaderTLevel : MonoBehaviour
 {
     public GameObject PausePanel;
     public GameObject InGamePanel;
+    public GameObject Panl1;
+    public GameObject Panl2;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,13 @@ public class LoaderTLevel : MonoBehaviour
     {
         
     }
-    
+
+    public void SetUpChangeSelection()
+    {
+        GameManager.singleton.UI.Lvl1Panel = Panl1;
+        GameManager.singleton.UI.lvl2Panel = Panl2;
+    }
+
     public void SetUpTLvel()
     {
         GameManager.singleton.UI.InGamePanel = InGamePanel;

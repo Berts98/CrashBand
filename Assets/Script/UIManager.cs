@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject PausePanel;
     public GameObject InGamePanel;
+    public GameObject Lvl1Panel;
+    public GameObject lvl2Panel;
 
     private void OnEnable()
     {
@@ -16,6 +18,9 @@ public class UIManager : MonoBehaviour
     {
         GameManager.singleton.PauseOn -= ActivatePausePanel;
         GameManager.singleton.PauseOff -= DisactivatePausePanel;
+
+        GameManager.singleton.Panl1 -= ChangeLevelSelection1;
+        GameManager.singleton.Panl2 -= ChangeLevelSelection2;
     }
 
     // Start is called before the first frame update
@@ -23,6 +28,9 @@ public class UIManager : MonoBehaviour
     {
         GameManager.singleton.PauseOn += ActivatePausePanel;
         GameManager.singleton.PauseOff += DisactivatePausePanel;
+
+        GameManager.singleton.Panl1 += ChangeLevelSelection1;
+        GameManager.singleton.Panl2 += ChangeLevelSelection2;
     }
 
     // Update is called once per frame
@@ -40,5 +48,16 @@ public class UIManager : MonoBehaviour
     {
         PausePanel.SetActive(false);
         InGamePanel.SetActive(true);
+    }
+
+    public void ChangeLevelSelection1()
+    {
+        Lvl1Panel.SetActive(false);
+        lvl2Panel.SetActive(true);
+    }
+    public void ChangeLevelSelection2()
+    {
+        lvl2Panel.SetActive(false);
+        Lvl1Panel.SetActive(true);
     }
 }
