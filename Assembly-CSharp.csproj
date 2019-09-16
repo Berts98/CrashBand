@@ -74,6 +74,7 @@
     <Compile Include="Assets\StateMachine\SMState\PauseState.cs" />
     <Compile Include="Assets\StateMachine\SMState\SelectionState.cs" />
     <Compile Include="Assets\StateMachine\StateBehaviourBase.cs" />
+    <None Include="Assets\Yurowm\Shaders\SkinShader.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/berto/OneDrive/Documenti/CrashBand/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
