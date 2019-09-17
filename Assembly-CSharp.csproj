@@ -60,8 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\AnimationController.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\LoaderTLevel.cs" />
+    <Compile Include="Assets\Script\MovementBase.cs" />
     <Compile Include="Assets\Script\MyButtonBase.cs" />
     <Compile Include="Assets\Script\MySceneManager.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
