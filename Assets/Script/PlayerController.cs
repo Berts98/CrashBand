@@ -13,12 +13,15 @@ public class PlayerController : MovementBase
 
     private Vector3 MoveDirection;
     public float gravityScale;
+    public Transform Pivot;
+    public float RotationSpeed;
+    public GameObject PlayerModel;
 
     // Start is called before the first frame update
     void Start()
     {
         CharController = GetComponent<CharacterController>();
-        animCtrl = GetComponent<AnimationController>();
+        animCtrl = GetComponentInChildren<AnimationController>();
         if (animCtrl != null)
             animCtrl.Init(this);
     }
@@ -49,8 +52,16 @@ public class PlayerController : MovementBase
         {
             jump = false;
         }
-            MoveDirection.y = MoveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
-            CharController.Move(MoveDirection * Time.deltaTime);
+
+        MoveDirection.y = MoveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
+        CharController.Move(MoveDirection * Time.deltaTime);
+
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, Pivot.rotation.eulerAngles.y, 0f);
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(MoveDirection.x, 0f, MoveDirection.z));
+            PlayerModel.transform.rotation = Quaternion.Slerp(PlayerModel.transform.rotation, newRotation, RotationSpeed * Time.deltaTime);
+        }
     }
 
     public void JumpAnim()
