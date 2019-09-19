@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoaderTLevel : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class LoaderTLevel : MonoBehaviour
     public GameObject InGamePanel;
     public GameObject Panl1;
     public GameObject Panl2;
+    public Text Collectable;
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +33,6 @@ public class LoaderTLevel : MonoBehaviour
     {
         GameManager.singleton.UI.InGamePanel = InGamePanel;
         GameManager.singleton.UI.PausePanel = PausePanel;
+        GameManager.singleton.UI.CollTextValue = Collectable;
     }
 }

@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public GameObject Lvl1Panel;
     public GameObject lvl2Panel;
 
+    public Text CollTextValue;
+
     private void OnEnable()
     {
 

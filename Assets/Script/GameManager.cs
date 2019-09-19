@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public FlowSM StateMachine;
     public MySceneManager Scenemg;
     public UIManager UI;
+    public int currentColl;
 
     #region Actions
     public Action OnClick;
@@ -102,6 +103,12 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void AddCollectable(int CollToAdd)
+    {
+        currentColl += CollToAdd;
+        UI.CollTextValue.text = "X" + currentColl;
     }
 
     public void SetUp()
