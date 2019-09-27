@@ -8,6 +8,7 @@ public class PlayerController : MovementBase
     public float MovementSpeed;
     //public Rigidbody RB;
     public float JumpForce;
+    public int currenthealth;
     public CharacterController CharController;
     AnimationController animCtrl;
 
@@ -20,6 +21,7 @@ public class PlayerController : MovementBase
     // Start is called before the first frame update
     void Start()
     {
+        currenthealth = 5;
         CharController = GetComponent<CharacterController>();
         animCtrl = GetComponentInChildren<AnimationController>();
         if (animCtrl != null)
@@ -62,6 +64,11 @@ public class PlayerController : MovementBase
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(MoveDirection.x, 0f, MoveDirection.z));
             PlayerModel.transform.rotation = Quaternion.Slerp(PlayerModel.transform.rotation, newRotation, RotationSpeed * Time.deltaTime);
         }
+    }
+
+    public void Damage(int dmg)
+    {
+        currenthealth -= dmg;
     }
 
     public void JumpAnim()
