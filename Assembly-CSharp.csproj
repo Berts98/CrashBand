@@ -62,11 +62,13 @@
   <ItemGroup>
     <Compile Include="Assets\Script\AnimationController.cs" />
     <Compile Include="Assets\Script\Collectable.cs" />
+    <Compile Include="Assets\Script\EnemyBase.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\LoaderTLevel.cs" />
     <Compile Include="Assets\Script\MovementBase.cs" />
     <Compile Include="Assets\Script\MyButtonBase.cs" />
     <Compile Include="Assets\Script\MySceneManager.cs" />
+    <Compile Include="Assets\Script\PlatformBase.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\UIManager.cs" />
     <Compile Include="Assets\StateMachine\FlowSM.cs" />

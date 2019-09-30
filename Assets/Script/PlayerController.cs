@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class PlayerController : MovementBase
     public float MovementSpeed;
     //public Rigidbody RB;
     public float JumpForce;
-    public int currenthealth;
+    public int currentHealth;
     public CharacterController CharController;
     AnimationController animCtrl;
 
@@ -21,7 +22,7 @@ public class PlayerController : MovementBase
     // Start is called before the first frame update
     void Start()
     {
-        currenthealth = 5;
+        currentHealth = 5;
         CharController = GetComponent<CharacterController>();
         animCtrl = GetComponentInChildren<AnimationController>();
         if (animCtrl != null)
@@ -31,6 +32,7 @@ public class PlayerController : MovementBase
     // Update is called once per frame
     void Update()
     {
+        LifeValue();
         if (CharController.isGrounded && jump == false)
         {
             MoveDirection = new Vector3(Input.GetAxis("Horizontal") * MovementSpeed, MoveDirection.y, Input.GetAxis("Vertical") * MovementSpeed);
@@ -68,7 +70,12 @@ public class PlayerController : MovementBase
 
     public void Damage(int dmg)
     {
-        currenthealth -= dmg;
+        currentHealth -= dmg;
+    }
+
+    public void LifeValue()
+    {
+        GameManager.singleton.UI.LifeTextValue.text = "X " + currentHealth;
     }
 
     public void JumpAnim()

@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject lvl2Panel;
 
     public Text CollTextValue;
+    public Text LifeTextValue;
 
     private void OnEnable()
     {

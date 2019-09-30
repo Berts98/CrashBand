@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public void AddCollectable(int CollToAdd)
     {
         currentColl += CollToAdd;
-        UI.CollTextValue.text = "X" + currentColl;
+        UI.CollTextValue.text = "X " + currentColl;
     }
 
     public void SetUp()

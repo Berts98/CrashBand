@@ -10,6 +10,7 @@ public class LoaderTLevel : MonoBehaviour
     public GameObject Panl1;
     public GameObject Panl2;
     public Text Collectable;
+    public Text Life;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +35,6 @@ public class LoaderTLevel : MonoBehaviour
         GameManager.singleton.UI.InGamePanel = InGamePanel;
         GameManager.singleton.UI.PausePanel = PausePanel;
         GameManager.singleton.UI.CollTextValue = Collectable;
+        GameManager.singleton.UI.LifeTextValue = Life;
     }
 }
