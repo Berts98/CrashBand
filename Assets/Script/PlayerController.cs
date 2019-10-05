@@ -19,11 +19,15 @@ public class PlayerController : MovementBase
     public float RotationSpeed;
     public GameObject PlayerModel;
 
+    private bool isRespawning;
+    public Vector3 respawnpoint;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = 5;
         CharController = GetComponent<CharacterController>();
+        respawnpoint = gameObject.transform.position;
         animCtrl = GetComponentInChildren<AnimationController>();
         if (animCtrl != null)
             animCtrl.Init(this);
@@ -71,6 +75,21 @@ public class PlayerController : MovementBase
     public void Damage(int dmg)
     {
         currentHealth -= dmg;
+        if (currentHealth > 0)
+        {
+            Respawn();
+        }
+        //else
+        //{
+
+        //}
+    }
+
+    public void Respawn()
+    {
+        CharController.enabled = false;
+        gameObject.transform.position = respawnpoint;
+        CharController.enabled = true;
     }
 
     public void LifeValue()

@@ -13,7 +13,7 @@ public class InitState : StateMachineBehaviour
     {
         SceneManager.sceneLoaded += Test;
         SM = GameManager.singleton.StateMachine;
-       
+        GameManager.singleton.currentColl = 0;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
