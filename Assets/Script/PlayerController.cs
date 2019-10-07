@@ -19,8 +19,14 @@ public class PlayerController : MovementBase
     public float RotationSpeed;
     public GameObject PlayerModel;
 
+    public float invincibilityLenght;
+    private float invincibilityCounter;
+    public Renderer playerRenderer;
+    private float flashCounter;
+    public float flashLenght = 0.1f;
     private bool isRespawning;
-    public Vector3 respawnpoint;
+    private Vector3 respawnpoint;
+    private float respawnLenght;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +76,22 @@ public class PlayerController : MovementBase
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(MoveDirection.x, 0f, MoveDirection.z));
             PlayerModel.transform.rotation = Quaternion.Slerp(PlayerModel.transform.rotation, newRotation, RotationSpeed * Time.deltaTime);
         }
+
+        if (invincibilityCounter > 0)
+        {
+            invincibilityCounter -= Time.deltaTime;
+            flashCounter -= Time.deltaTime;
+            if (flashCounter <= 0)
+            {
+                playerRenderer.enabled = !playerRenderer.enabled;
+                flashCounter = flashLenght;
+            }
+
+            if (invincibilityCounter <= 0)
+            {
+                playerRenderer.enabled = true;
+            }
+        }
     }
 
     public void Damage(int dmg)
@@ -87,9 +109,26 @@ public class PlayerController : MovementBase
 
     public void Respawn()
     {
+        if (!isRespawning)
+        {
+            StartCoroutine("RespawnCo"); 
+        }
+    }
+
+    public IEnumerator RespawnCo()
+    {
+        isRespawning = true;
         CharController.enabled = false;
+
+        yield return new WaitForSeconds(respawnLenght);
+        isRespawning = false;
+
         gameObject.transform.position = respawnpoint;
         CharController.enabled = true;
+
+        invincibilityCounter = invincibilityLenght;
+        playerRenderer.enabled = false;
+        flashCounter = flashLenght;
     }
 
     public void LifeValue()
