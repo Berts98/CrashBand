@@ -18,7 +18,7 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(pos1, pos2, (Mathf.Sin(speed * Time.time) + 1.0f) / 2.0f);
+        EnemyMovement();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +26,14 @@ public class EnemyBase : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             FindObjectOfType<PlayerController>().Damage(damage);
+        }
+    }
+
+    public void EnemyMovement()
+    {
+        if (gameObject.tag == "Enemy")
+        {
+            transform.position = Vector3.Lerp(pos1, pos2, (Mathf.Sin(speed * Time.time) + 1.0f) / 2.0f);
         }
     }
 }

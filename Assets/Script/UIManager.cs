@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject InGamePanel;
     public GameObject Lvl1Panel;
     public GameObject lvl2Panel;
+    public GameObject VictoryPanel;
+    public GameObject GameOverPanel;
 
     public Text CollTextValue;
     public Text LifeTextValue;

@@ -43,6 +43,11 @@ public class PlayerController : MovementBase
     void Update()
     {
         LifeValue();
+        Movement();
+    }
+
+    public void Movement()
+    {
         if (CharController.isGrounded && jump == false)
         {
             MoveDirection = new Vector3(Input.GetAxis("Horizontal") * MovementSpeed, MoveDirection.y, Input.GetAxis("Vertical") * MovementSpeed);
@@ -101,10 +106,10 @@ public class PlayerController : MovementBase
         {
             Respawn();
         }
-        //else
-        //{
-
-        //}
+        else
+        {
+            KillMe();
+        }
     }
 
     public void Respawn()
@@ -113,6 +118,12 @@ public class PlayerController : MovementBase
         {
             StartCoroutine("RespawnCo"); 
         }
+    }
+
+    public void KillMe()
+    {
+        GameManager.singleton.Scenemg.EndLevel();
+        GameManager.singleton.UI.GameOverPanel.SetActive(true);
     }
 
     public IEnumerator RespawnCo()
@@ -131,11 +142,21 @@ public class PlayerController : MovementBase
         flashCounter = flashLenght;
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Finish")
+        {
+            GameManager.singleton.Scenemg.EndLevel();
+            GameManager.singleton.UI.VictoryPanel.SetActive(true);
+        }
+    }
+
     public void LifeValue()
     {
         GameManager.singleton.UI.LifeTextValue.text = "X " + currentHealth;
     }
 
+    #region Anim
     public void JumpAnim()
     {
         if (OnJump != null)
@@ -157,4 +178,5 @@ public class PlayerController : MovementBase
             OnIdle();
         }
     }
+    #endregion
 }

@@ -9,6 +9,9 @@ public class LoaderTLevel : MonoBehaviour
     public GameObject InGamePanel;
     public GameObject Panl1;
     public GameObject Panl2;
+    public GameObject Victory;
+    public GameObject GameOver;
+
     public Text Collectable;
     public Text Life;
 
@@ -36,5 +39,11 @@ public class LoaderTLevel : MonoBehaviour
         GameManager.singleton.UI.PausePanel = PausePanel;
         GameManager.singleton.UI.CollTextValue = Collectable;
         GameManager.singleton.UI.LifeTextValue = Life;
+    }
+
+    public void EndLevelPanel()
+    {
+        GameManager.singleton.UI.VictoryPanel = Victory;
+        GameManager.singleton.UI.GameOverPanel = GameOver;
     }
 }
