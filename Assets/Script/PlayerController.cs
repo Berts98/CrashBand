@@ -123,7 +123,8 @@ public class PlayerController : MovementBase
     public void KillMe()
     {
         GameManager.singleton.Scenemg.EndLevel();
-        GameManager.singleton.UI.GameOverPanel.SetActive(true);
+        //GameManager.singleton.UI.GameOverPanel.SetActive(true);
+        GameManager.singleton.UI.GOPanel();
     }
 
     public IEnumerator RespawnCo()
@@ -147,7 +148,8 @@ public class PlayerController : MovementBase
         if (other.gameObject.tag == "Finish")
         {
             GameManager.singleton.Scenemg.EndLevel();
-            GameManager.singleton.UI.VictoryPanel.SetActive(true);
+            //GameManager.singleton.UI.VictoryPanel.SetActive(true);
+            GameManager.singleton.UI.VicPanel();
         }
     }
 

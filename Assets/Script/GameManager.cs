@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public Action PauseOff;
     public Action Panl1;
     public Action Panl2;
+    public Action Victory;
+    public Action GameOver;
     #endregion
 
     private void Awake()

@@ -26,6 +26,9 @@ public class UIManager : MonoBehaviour
 
         GameManager.singleton.Panl1 -= ChangeLevelSelection1;
         GameManager.singleton.Panl2 -= ChangeLevelSelection2;
+
+        GameManager.singleton.Victory -= VicPanel;
+        GameManager.singleton.GameOver -= GOPanel;
     }
 
     // Start is called before the first frame update
@@ -36,6 +39,9 @@ public class UIManager : MonoBehaviour
 
         GameManager.singleton.Panl1 += ChangeLevelSelection1;
         GameManager.singleton.Panl2 += ChangeLevelSelection2;
+
+        GameManager.singleton.Victory += VicPanel;
+        GameManager.singleton.GameOver += GOPanel;
     }
 
     // Update is called once per frame
@@ -64,5 +70,16 @@ public class UIManager : MonoBehaviour
     {
         lvl2Panel.SetActive(false);
         Lvl1Panel.SetActive(true);
+    }
+
+    public void VicPanel()
+    {
+        VictoryPanel.SetActive(true);
+        GameOverPanel.SetActive(false);
+    }
+    public void GOPanel()
+    {
+        VictoryPanel.SetActive(false);
+        GameOverPanel.SetActive(true);
     }
 }
