@@ -14,19 +14,7 @@ public class LoaderTLevel : MonoBehaviour
 
     public Text Collectable;
     public Text Life;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+ 
     public void SetUpChangeSelection()
     {
         GameManager.singleton.UI.Lvl1Panel = Panl1;

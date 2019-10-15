@@ -34,11 +34,6 @@ public class GameManager : MonoBehaviour
         SetUp();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnEnable()
     {
         OnClick += OnClickTest;

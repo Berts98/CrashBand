@@ -15,10 +15,6 @@ public class UIManager : MonoBehaviour
     public Text CollTextValue;
     public Text LifeTextValue;
 
-    private void OnEnable()
-    {
-
-    }
     private void OnDisable()
     {
         GameManager.singleton.PauseOn -= ActivatePausePanel;
@@ -42,12 +38,6 @@ public class UIManager : MonoBehaviour
 
         GameManager.singleton.Victory += VicPanel;
         GameManager.singleton.GameOver += GOPanel;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ActivatePausePanel()
